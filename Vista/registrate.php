@@ -11,7 +11,22 @@ include('Menu.php');
       </div>
        <div class="row">
         <form> <center>
-          <div class="form-row">  
+          <div class="form-row">
+            <div class="form-group">
+              <div class="col-md-6 cl-sm-12 mt-2" >
+              <label for="exampleInputEmail1" style="float: left;">Tipo Documento</label>
+              <select name="IdTidocu" id="">
+                <option value=""></option>
+                <option value=""></option>
+              </select>
+              </div>
+            </div> 
+            <div class="form-group">
+              <div class="col-md-6 cl-sm-12 mt-2" >
+              <label for="exampleInputEmail1" style="float: left;">Documento</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su nombre documento">
+              </div>
+            </div> 
             <div class="form-group">
               <div class="col-md-6 cl-sm-12 mt-2" >
               <label for="exampleInputEmail1" style="float: left;">Nombre</label>
@@ -20,7 +35,7 @@ include('Menu.php');
             </div>
             <div class="form-group">
               <div class="col-md-6 cl-sm-12 mt-2" >
-              <label for="exampleInputPassword1" style="float: left;">Correo Electronico</label>
+              <label for="exampleInputPassword1" style="float: left;">Correo Electrónico</label>
               <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su correo electrónico">
               </div>
             </div>
