@@ -63,8 +63,9 @@ include('Menu.php');
         <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
           <a href="index.php" class="scrollto" style="color: white;">Inicio</a>
           <a href="index.php#about" class="scrollto" style="color: white;">Nosotros</a>
-          <a href="registrate.php" style="color: white;">Registrarme</a>
+          <a href="registrate.php" style="color: white;">Registrarme como usuario</a>
           <a href="Iniciarsesion.php" style="color: white;">Iniciar sesión</a>
+          <a href="registrateempre.php" style="color: white;">Registrarme como empresa</a>
         </nav>
       </div>
     </div>
