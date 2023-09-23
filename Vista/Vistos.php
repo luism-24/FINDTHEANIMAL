@@ -61,7 +61,7 @@ error_reporting(0);
             <li class="dropdown"><a href="#"><span>Peluditos</span> <i class="bi bi-chevron-down "></i></a>
               <ul>
                 
-                <li><a class="nav-link scrollto active" href="Buscados1.">Perdidos/buscados</a></li>
+                <li><a class="nav-link scrollto active" href="Buscados1.php">Perdidos/buscados</a></li>
                     <li><a href="Vistos.php">Vistos en la calle</a></li>
                     <li><a href="tiendasasociadas.php">Tiendas asociadas</a></li>
                     <li><a href="fundaciones.php">Fundaciones</a></li>
@@ -94,7 +94,10 @@ error_reporting(0);
                     include( '../Controlador/conex.php'); 
                   #Creamos una variable, $Consulta, que va a contener el Script Select(Consulta a la base de datos)
                    
-                    $Consulta="SELECT Idanimal, Nombreanimal, Fotoanimal, Fotoanimal, Descrianimal, Idraza, Idestado, Idmunicipio FROM animal ";
+                    $Consulta="SELECT Idanimal, Nombreanimal, Descrianimal, raza.Descriraza, estado.Descriestado, municipio.Idmunicipio FROM animal 
+                    INNER JOIN estado ON animal.Idestado = estado.Idestado WHERE animal.Idestado = 2 
+                    INNER JOIN raza ON raza.Idraza = animal.Idraza 
+                    INNER JOIN municipio ON municipio.Idmunicipio = animal.Idmunicipio";
                      #Creamos una variable, $Tour que es envia la conexión y ejecuta la consulta $Consulta
                     $Tour=$conexion->query($Consulta);
                      #Creamos un ciclo que permite que los datos de la consulta sean insertados en un vector 
@@ -111,17 +114,16 @@ error_reporting(0);
              el nombre  de la imagen, en este caso esta en la posición 5; recordemos  que la carpeta que estamos
             llamando debe contener el nombre y extensión de la imagen que estamos consultando,
             en este caso, las imágenes deben estar en la carpeta assets/img (Vista)-->                 
-            <img src="App/Admon/img<?php echo ''.$row[2].''; ?>" class="card-img-top" alt="...">
+            <img src="App/Admon/img/<?php echo ''.$row[2].''; ?>" class="card-img-top" alt="...">
             <div class="card-body">
                  <!-- En la posición 1 está el nombre del sitio -->  
                 <h5 class="card-title" style="color: #3b626f;"><?php echo ''.$row[1].''; ?></h5>
                  <!-- Consultamos los demás datos desde la base de datos -->  
                 <p class="card-text card-text1">
-                <b>Nombre:</b><?php echo ''.$row[1].''; ?><br>
-                <b>Descripción: </b><?php echo ''.$row[4].''; ?><br>
-                <b>Raza: </b><?php echo ''.$row[5].''; ?><br>
-                <b>Estado: </b><?php echo ''.$row[6].''; ?><br>
-                <b>Municipio: </b><?php echo ''.$row[7].''; ?><br>
+                <b>Descripción: </b><?php echo ''.$row[3].''; ?><br>
+                <b>Raza: </b><?php echo ''.$row[4].''; ?><br>
+                <b>Estado: </b><?php echo ''.$row[5].''; ?><br>
+                <b>Municipio: </b><?php echo ''.$row[6].''; ?><br>
                 
 
                 </p>

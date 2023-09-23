@@ -1,96 +1,67 @@
 <?php
 include('Menu.php');
 ?>
+    
+<section class="container mt-5">
+  <div class="row mt-5">
 
-
-
-    <section id="Buscado">
-      <div class="Body2"></div>
-      <div style="margin-top: 130px;">
-        <div class="section-header">
-          <h3 class="section-title">Perdidos/Buscados</h3>
+  <div class="section-header" style="margin-top: 25px">
+          <h3 class="section-title">Vistos</h3>
           <span class="section-divider"></span>
-          <p class="section-description"></p>
         </div>
-      <div class="mt-5"></div>
-       <div class="container">
-        <div class="card-group">
-         <div class="col-md-4 col-sm-12">
-          <div class="card"style="margin-right: 20px;">
-            <img src="assets/img/Buscados/gato1.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Gato</h5>
-              <p class="card-text">Es un gato atigrado de color naranja, se perdió por el colegio Cristóbal Colón de Santa Mónica el día 16 de mayo-2022 </p>
-              <p><a href="registrate.php">Ver Más</a></p>
-            </div>
-           </div>
-         </div>
+      <!-- Después de crear la fila hacemos la consulta a la tabla que deseamos mostrar datos-->
+      <?php 
+              #Conectamos a la Base de datos
+                    include( '../Controlador/conex.php'); 
+                  #Creamos una variable, $Consulta, que va a contener el Script Select(Consulta a la base de datos)
+                   
+                    $Consulta="SELECT Idanimal, Nombreanimal, Fotoanimal, Descrianimal, Descriraza, Descriestado, Descrimuni FROM animal INNER JOIN raza ON  raza.Idraza = animal.Idraza
+                    INNER JOIN estado ON animal.idestado = 1
+                    INNER JOIN municipio ON municipio.Idmunicipio = animal.Idmunicipio";
+                     #Creamos una variable, $Tour que es envia la conexión y ejecuta la consulta $Consulta
+                    $Tour=$conexion->query($Consulta);
+                     #Creamos un ciclo que permite que los datos de la consulta sean insertados en un vector 
+                     #llamado $row, que se ejecuta mientras se encuentres datos dentro de la tabla que estamos 
+                     #consultando
+
+                    while ($row=$Tour->fetch_row()){
+                   ?>
+                     <!-- Insertamos el div que permite determinar el espacio en que estará insertada la columna-->
            <div class="col-md-4 col-sm-12">
-          <div class="card"style="margin-right: 20px;">
-            <img src="assets/img/Buscados/gato2.png" class="card-img-top" alt="...">
+         <!-- De acuerdo a la versión de Bootstrap que estamos manejando, creamos una sola tarjeta-->
+            <div class="card" style="width: 18rem; margin-top: 25px">
+             <!-- En la etiqueta de imágenes creamos la ruta donde vamos a insertar las imágenes y consultamos 
+             el nombre  de la imagen, en este caso esta en la posición 5; recordemos  que la carpeta que estamos
+            llamando debe contener el nombre y extensión de la imagen que estamos consultando,
+            en este caso, las imágenes deben estar en la carpeta assets/img (Vista)-->                 
+            <img src="App/Admon/img/<?php echo ''.$row[2].''; ?>" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Nirry</h5>
-              <p class="card-text">Es un gato naranjado con patitas blancas, se perdió por la iglesia El divino maestro de Santa Mónica el día 27 de mayo-2022</p>
-              <p><a href="registrate.php">Ver Más</a></p>
+                 <!-- En la posición 1 está el nombre del sitio -->  
+                <h5 class="card-title" style="color: #3b626f;"><?php echo ''.$row[1].''; ?></h5>
+                 <!-- Consultamos los demás datos desde la base de datos -->  
+                <p class="card-text card-text1">
+                <b>Descripción: </b><?php echo ''.$row[3].''; ?><br>
+                <b>Raza: </b><?php echo ''.$row[4].''; ?><br>
+                <b>Estado: </b><?php echo ''.$row[5].''; ?><br>
+                <b>Municipio: </b><?php echo ''.$row[6].''; ?><br>
+                
+
+                </p>
+                <a href="#" class="btn btn-primary btn-sm">Ver más</a>
             </div>
-           </div>
-          </div>
-          <div class="col-md-4 col-sm-12">
-          <div class="card"style="margin-right: 20px;">
-            <img src="assets/img/Buscados/perro1.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Paco</h5>
-              <p class="card-text">Es un perro chihuahua de mayor edad blanco y negro, se perdió por el mall santana de calasanz el día 30 de abril-2023</p>
-              <p><a href="registrate.php">Ver Más</a></p>
+            
             </div>
-          </div>
-         </div>
-        </div>
-       </div>
-       <div class="mt-3"></div>
-       <div class="container">
-        <div class="card-group">
-         <div class="col-md-4 col-sm-12">
-          <div class="card"style="margin-right: 20px;">
-            <img src="assets/img/Buscados/perro3.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Eco</h5>
-              <p class="card-text">Es un perro de mayor edad negro y café, se perdió por el la iglesia San Marcos de Envigado el día 12 de enero-2023</p>
-              <p><a href="registrate.php">Ver Más</a></p>
-            </div>
-          </div>
-         </div>
-          <div class="col-md-4 col-sm-12">
-           <div class="card"style="margin-right: 20px;">
-            <img src="assets/img/Buscados/perro2.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Ola y Paco</h5>
-              <p class="card-text">Son un par de perros que son hermanos, estos son marrones y tienen un collar rojo, se perdieron por el primer parque de Laurenes el día 24 de mayo-2023</p>
-              <p><a href="registrate.php">Ver Más</a></p>
-            </div>
-           </div>
-          </div>
-          <div class="col-md-4 col-sm-12">
-           <div class="card"style="margin-right: 20px;">
-            <img src="assets/img/Buscados/gato3.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Júpiter</h5>
-              <p class="card-text">Es un gato blanco con las orejas, cara y patas con un degradado a negro , se perdió por la iglesia El divino maestro de Santa Mónica el día 07 de febrero-2023</p>
-              <p><a href="registrate.php">Ver Más</a></p>
-            </div>
-           </div>
-          </div>
-        </div>
-       </div>
-      </div>
-      </div>
-    </section><!-- End Hero Section -->
-    <section class="inner-page">
-      <div class="container">
-        <p>
-        </p>
-      </div>
-    </section>
+            
+         </div>    
+         <?php } ?>
+              <!-- Cerramos las instruccion While donde termina el div de las columnas -->     
+  </div>
+
+
+
+
+
+</section>
 
   </main><!-- End #main -->
 
