@@ -7,65 +7,82 @@ include('Menu.php');
       <div class="section-header mt-4">
         <h3 class="section-title">Registrarse</h3>
         <span class="section-divider"></span>
-        <p class="section-description">Regístrate para una mejor experiencia.</p>
+        <p class="section-description">Regístrate para que conozcan tu empresa.</p>
       </div>
        <div class="row">
         <form> <center>
           <div class="form-row">  
             <div class="form-group">
               <div class="col-md-6 cl-sm-12 mt-2" >
-              <label for="exampleInputEmail1" style="float: left;">Nombre</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su nombre completo">
+              <label for="exampleInputEmail1" style="float: left;">NIT</label>
+              <input type="number" class="form-control" name="Idempresa" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su el NIT de su empresa">
               </div>
             </div>
             <div class="form-group">
               <div class="col-md-6 cl-sm-12 mt-2" >
-              <label for="exampleInputPassword1" style="float: left;">Correo Electronico</label>
-              <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su correo electrónico">
+              <label for="exampleInputEmail1" style="float: left;">Nombre</label>
+              <input type="text" class="form-control" name="Nombrempre" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su nombre completo">
               </div>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="col-md-6 cl-sm-12 mt-2" >
-            <label for="exampleInputPassword1" style="float: left;">Contraseña</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingrese una contraseña"> <br>
-            <label for="exampleInputPassword1" style="float: left;">Repita la contraseña</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Repita la contraseña">
+            <div class="form-group">
+              <div class="col-md-6 cl-sm-12 mt-2" >
+              <label for="exampleInputEmail1" style="float: left;">Tipo de Empresa</label>
+              <select name="IdTiempre" id="">
+              <?php  
+                    include( '../Controlador/conex.php'); 
+                    # Consultamos a la tabla tipodocu, que es la que tiene los tipos de docuementos en la BD:
+                    $sql = "SELECT * FROM `Tipoempresa`";
+                    $eje = $conexion->query($sql);
+                    # Mostramos a través de un ciclo todas las opciones válidas:
+                    while($row = $eje->fetch_row()){
+                    echo '<option value="'.$row[0].'">'.$row[1].'</option>';
+                    }
+              ?>
+              </select>
+              </div>
+            </div> 
+            <div class="form-group">
+              <div class="col-md-6 cl-sm-12 mt-2" >
+              <label for="exampleInputEmail1" style="float: left;">Descripción</label>
+              <input type="text" class="form-control" name="Descriempresa" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese la descripción">
+              </div>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="col-md-6 cl-sm-12 mt-2" >
-            <label for="exampleInputEmail1" style="float: left;">Dirección</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su dirección">
+            <div class="form-group">
+              <div class="col-md-6 cl-sm-12 mt-2" >
+              <label for="exampleInputEmail1" style="float: left;">Dirección</label>
+              <input type="text" class="form-control" name="Direcempre" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese la dirección">
+              </div>
             </div>
-          </div>
+            <div class="form-group">
+              <div class="col-md-6 cl-sm-12 mt-2" >
+              <label for="exampleInputEmail1" style="float: left;">Foto</label>
+              <input type="text" class="form-control" name="Fotoempre" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese la foto">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-6 cl-sm-12 mt-2" >
+              <label for="exampleInputEmail1" style="float: left;">Encargado</label>
+              <input type="text" class="form-control" name="Encargadoempre" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese el nombre del encargado">
+              </div>
+            </div>
           <div class="form-group">
             <div class="col-md-6 cl-sm-12 mt-2" >
             <label for="exampleInputEmail1" style="float: left;">Teléfono</label>
-            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su teléfono(Ejemplo, +57 302 450 6783)">
+            <input type="number" class="form-control" name="Telefonoempre" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su teléfono(Ejemplo, +57 302 450 6783)">
             </div>
           </div>
           <div class="form-group">
-            <div class="col-md-6 cl-sm-12 mt-2" >
-            <label for="exampleInputEmail1" style="float: left;">Selecciona tu ciudad o municipio</label>
-            <select class="form-control">
-              <option>Selecciona</option>
-              <option>Barbosa</option>
-              <option>Girardota</option>
-              <option>Copacabana</option>
-              <option>Bello</option>
-              <option>Medellín</option>
-              <option>Itagüí</option>
-              <option>Envigado</option>
-              <option>Sabaneta</option>
-              <option>Caldas</option>
-            </select>
+              <div class="col-md-6 cl-sm-12 mt-2" >
+              <label for="exampleInputPassword1" style="float: left;">Correo Electrónico</label>
+              <input type="email" class="form-control" name="Correoempre" id="exampleInputPassword1" placeholder="Ingrese su correo electrónico">
+              </div>
             </div>
-          </div>
           <div class="form-group">
             <div class="col-md-6 cl-sm-12 mt-2" >
-            <label for="exampleInputEmail1" style="float: left;">Ingrese su fecha de nacimiento</label>
-            <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su fecha de nacimiento">
+            <label for="exampleInputPassword1" style="float: left;">Contraseña</label>
+            <input type="password" class="form-control" name="Contraseñaempre" id="exampleInputPassword1" placeholder="Ingrese una contraseña">
+            <label for="exampleInputPassword1" style="float: left;">Repita la contraseña</label>
+            <input type="password" class="form-control" name="Contraseñaempre" id="exampleInputPassword1" placeholder="Repita la contraseña">
             </div>
           </div>
           <div class="form-group form-check">
@@ -74,8 +91,9 @@ include('Menu.php');
             <label class="form-check-label" for="exampleCheck1" style="margin-right: 140px;">Acepto Términos de Servicio</label>
             </div>
           </div>
-          <p style="margin-bottom: 5px;">¿Ya tienes cuenta? <a href="Iniciarsesion.php"data-toggle="modal" data-target="#exampleModal2">Iniciar Sesión</a></p>
           <button type="submit" class="btn btn-primary mt-2">Regístrate</button>
+          <p style="margin-bottom: 5px;">¿Ya tienes cuenta? <a href="Iniciarsesion.php"data-toggle="modal" data-target="#exampleModal2">Iniciar Sesión</a></p>
+          <p style="margin-bottom: 5px;">¿Quieres registrarte como usuario? <a href="registrate.php"data-toggle="modal" data-target="#exampleModal2">Regístrate como usuario</a></p>
         </form> </center>
       </div>
     </div>
