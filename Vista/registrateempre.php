@@ -21,7 +21,7 @@ include('Menu.php');
             <div class="form-group">
               <div class="col-md-6 cl-sm-12 mt-2" >
               <label for="exampleInputEmail1" style="float: left;">Nombre</label>
-              <input type="text" class="form-control" name="Nombrempre" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su nombre completo">
+              <input type="text" class="form-control" name="Nombrempre" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese el nombre de la empresa">
               </div>
             </div>
             <div class="form-group">
