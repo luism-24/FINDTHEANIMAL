@@ -15,7 +15,8 @@ include('Menu.php');
                     include( '../Controlador/conex.php'); 
                   #Creamos una variable, $Consulta, que va a contener el Script Select(Consulta a la base de datos)
                    
-                    $Consulta="SELECT Idempresa, Nombrempre, Descriempresa, Direcempre, Fotoempre, Encargadoempre, Telefonoempre, Correoempre, Contraseñaempre, tipoempresa.DescriTiempre FROM empresa INNER JOIN tipoempresa ON empresa.IdTiempre = tipoempresa.IdTiempre WHERE empresa.Idtiempre = 1; ";
+                    $Consulta="SELECT Idempresa, Nombrempre, Descriempresa, Direcempre, Fotoempre, Encargadoempre, Telefonoempre, Correoempre, Contraseñaempre, tipoempresa.DescriTiempre FROM empresa 
+                    INNER JOIN tipoempresa ON empresa.IdTiempre = tipoempresa.IdTiempre WHERE empresa.Idtiempre = 1; ";
                      #Creamos una variable, $Tour que es envia la conexión y ejecuta la consulta $Consulta
                     $Tour=$conexion->query($Consulta);
                      #Creamos un ciclo que permite que los datos de la consulta sean insertados en un vector 

@@ -2,88 +2,66 @@
 include('Menu.php');
 ?>
   <!-- ======= Hero Section ======= -->
-  <section id="tiendasasociadas">
-    <div style="margin-top: 130px;">
-      <div class="row">
-        <div class="section-header">
+  <section class="container mt-5">
+  <div class="row mt-5">
+
+  <div class="section-header" style="margin-top: 25px">
           <h3 class="section-title">Veterinarias</h3>
           <span class="section-divider"></span>
         </div>
-      </div>
-      <div class="container">
-      <div class="card-group">
-        <div class="col-md-4 col-sm-12" style="margin-bottom: 20px;">
-          <div class="card"style="margin-right: 20px;">
-           <img src="assets/img/Veterinarias/veterinarias2.jpg" class="card-img-top" alt="...">
+      <!-- Después de crear la fila hacemos la consulta a la tabla que deseamos mostrar datos-->
+      <?php 
+              #Conectamos a la Base de datos
+                    include( '../Controlador/conex.php'); 
+                  #Creamos una variable, $Consulta, que va a contener el Script Select(Consulta a la base de datos)
+                   
+                    $Consulta="SELECT Idempresa, Nombrempre, Descriempresa, Direcempre, Fotoempre, Encargadoempre, Telefonoempre, Correoempre, Contraseñaempre, tipoempresa.DescriTiempre FROM empresa 
+                    INNER JOIN tipoempresa ON empresa.IdTiempre = tipoempresa.IdTiempre WHERE empresa.Idtiempre = 2; ";
+                     #Creamos una variable, $Tour que es envia la conexión y ejecuta la consulta $Consulta
+                    $Tour=$conexion->query($Consulta);
+                     #Creamos un ciclo que permite que los datos de la consulta sean insertados en un vector 
+                     #llamado $row, que se ejecuta mientras se encuentres datos dentro de la tabla que estamos 
+                     #consultando
+
+                    while ($row=$Tour->fetch_row()){
+                   ?>
+                     <!-- Insertamos el div que permite determinar el espacio en que estará insertada la columna-->
+           <div class="col-md-4 col-sm-12">
+         <!-- De acuerdo a la versión de Bootstrap que estamos manejando, creamos una sola tarjeta-->
+            <div class="card" style="width: 18rem; margin-top: 25px">
+             <!-- En la etiqueta de imágenes creamos la ruta donde vamos a insertar las imágenes y consultamos 
+             el nombre  de la imagen, en este caso esta en la posición 5; recordemos  que la carpeta que estamos
+            llamando debe contener el nombre y extensión de la imagen que estamos consultando,
+            en este caso, las imágenes deben estar en la carpeta assets/img (Vista)-->                 
+            <img src="App/Admon/img/<?php echo ''.$row[4].''; ?>" class="card-img-top" alt="...">
             <div class="card-body">
-             <h3 class="card-title">C.V.M</h3>
-             <p class="card-text">Somos especialistas en la atención para mascotas. Aquí se encuentran las medicinas de primera calidad y con un servicio de urgencias abierto los 24 horas del día.</p>
-             <p>Dirección: Calle 48C # 66-62, 0500 Medellín, Antioquia</p>
-             <p><a href="registrate.php">Ver Más</a></p>
-           </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12">
-         <div class="card"style="margin-right: 20px;">
-           <img src="assets/img/Veterinarias/veterinarias1.jpg" class="card-img-top" alt="...">
-           <div class="card-body">
-             <h3 class="card-title">Punto Vet</h3>
-             <p class="card-text">Su trabajo se basa en la prevención, recuperación, y cuidado de mascotas, cuenta con atención veterinaria especializada.</p>
-             <p>Dirección:  Se ubica en la calle 49B # 68-18 sector Estadio.</p>
-             <p><a href="registrate.php">Ver Más</a></p>
-           </div>
-         </div>
-        </div>
-        <div class="col-md-4 col-sm-12">
-          <div class="card"style="margin-right: 20px;">
-            <img src="assets/img/Veterinarias/veterinarias3.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-             <h3 class="card-title">ClínicalVet</h3>
-             <p class="card-text">Ofrece a su clientela todo lo que necesites para tu amigo, desde alimentos concentrados, atencíon médica, medicinas y más. También cuenta con servicio a domicilio para quienes lo requieran.</p>
-             <p>Dirección: Plaza de mercado La América-Local 50 Medellín</p>
-             <p><a href="registrate.php">Ver Más</a></p>
-           </div>
-         </div>
-      </div>
-      <div class="col-md-4 col-sm-12">
-        <div class="card-group">
-         <div class="card"style="margin-right: 20px;">
-           <img src="assets/img/Veterinarias/veterinarias4.jpg" class="card-img-top" alt="...">
-           <div class="card-body">
-             <h3 class="card-title">EVI</h3>
-             <p class="card-text">Nos especializamos en la medicina veterinaria contamos con médicos altamente calificados .</p>
-             <p>Dirección: Carrera 25 No. 1 A Sur-45 / Mall Laureles, Medellín</p>
-            <p><a href="registrate.php">Ver Más</a></p>
-          </div>
-         </div>
-        </div>
-      </div>
-        <div class="col-md-4 col-sm-12">
-          <div class="card"style="margin-right: 20px;">
-            <img src="assets/img/Veterinarias/veterinarias5.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h3 class="card-title">Medical Center</h3>
-              <p class="card-text">Esta tienda ofrece atención hospitalaria, además, puedes adquirir  productos farmacéuticos de veterinaria.</p>
-              <p>Dirección: Calle 44 # 70 83 San Juan con la 70 Medellin-Antioquia-Colombia.</p>
-              <p><a href="registrate.php">Ver Más</a></p>
-          </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12">
-          <div class="card"style="margin-right: 20px;">
-            <img src="assets/img/Veterinarias/veterinarias6.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h3 class="card-title">Centro Veterinario</h3>
-              <p class="card-text">Ofrecemos tratamientos dermatológicos, castraciones, limpiezas dentales,  limpieza de oídos y hasta drenaje de glándulas. Todo para que tu mascota se sienta bien.</p>
-              <p>Dirección: Carrera 81 nº 37 - 100 Sótano 1 - C.C. Viva</p>
-              <p><a href="registrate.php">Ver Más</a></p>
-          </div>
-        </div>
-      </div>
-    </div>  
-    
-  </section>   
-  <footer id="footer" style="background-color: #0b5275; margin-top: 30px;">
+                 <!-- En la posición 1 está el nombre del sitio -->  
+                <h5 class="card-title" style="color: #3b626f;"><?php echo ''.$row[1].''; ?></h5>
+                 <!-- Consultamos los demás datos desde la base de datos -->  
+                <p class="card-text card-text1">
+                <b>Descripción: </b><?php echo ''.$row[2].''; ?><br>
+                <b>Encargado: </b><?php echo ''.$row[5].''; ?><br>
+                <b>Telefóno: </b><?php echo ''.$row[6].''; ?><br>
+                <b>Dirección: </b><?php echo ''.$row[3].''; ?><br>
+                
+
+                </p>
+                <a href="#" class="btn btn-primary btn-sm">Ver más</a>
+            </div>
+            
+            </div>
+            
+         </div>    
+         <?php } ?>
+              <!-- Cerramos las instruccion While donde termina el div de las columnas -->     
+  </div>
+
+
+
+
+
+</section>
+<footer id="footer" style="background-color: #0b5275; margin-top: 30px;">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 text-lg-start text-center">

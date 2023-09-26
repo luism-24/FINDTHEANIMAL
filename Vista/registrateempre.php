@@ -82,7 +82,7 @@ include('Menu.php');
             <label for="exampleInputPassword1" style="float: left;">Contraseña</label>
             <input type="password" class="form-control" name="Contraseñaempre" id="exampleInputPassword1" placeholder="Ingrese una contraseña">
             <label for="exampleInputPassword1" style="float: left;">Repita la contraseña</label>
-            <input type="password" class="form-control" name="Contraseñaempre" id="exampleInputPassword1" placeholder="Repita la contraseña">
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Repita la contraseña">
             </div>
           </div>
           <div class="form-group form-check">
