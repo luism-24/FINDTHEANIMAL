@@ -10,7 +10,7 @@ include('Menu.php');
         <p class="section-description">Regístrate para que conozcan tu empresa.</p>
       </div>
        <div class="row">
-        <form> <center>
+        <form method="post" action="../Controlador/GuardarRegistrarempre.php"> <center>
           <div class="form-row">  
             <div class="form-group">
               <div class="col-md-6 cl-sm-12 mt-2" >
@@ -35,7 +35,7 @@ include('Menu.php');
                     $eje = $conexion->query($sql);
                     # Mostramos a través de un ciclo todas las opciones válidas:
                     while($row = $eje->fetch_row()){
-                    echo '<option value="'.$row[0].'">'.$row[1].'</option>';
+                    echo '<option value="'.$row[0].'">'.$row[1].''.$row[2].'</option>';
                     }
               ?>
               </select>
@@ -91,7 +91,7 @@ include('Menu.php');
             <label class="form-check-label" for="exampleCheck1" style="margin-right: 140px;">Acepto Términos de Servicio</label>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary mt-2">Regístrate</button>
+          <button type="submit" name="BtnGuardar" class="btn btn-primary mt-2">Regístrate</button>
           <p style="margin-bottom: 5px;">¿Ya tienes cuenta? <a href="Iniciarsesion.php"data-toggle="modal" data-target="#exampleModal2">Iniciar Sesión</a></p>
           <p style="margin-bottom: 5px;">¿Quieres registrarte como usuario? <a href="registrate.php"data-toggle="modal" data-target="#exampleModal2">Regístrate como usuario</a></p>
         </form> </center>
