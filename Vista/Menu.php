@@ -63,7 +63,7 @@ error_reporting(0);
               <li><a href="Buscados1.php">Perdidos/buscados</a></li>
                   <li><a href="Vistos.php">Vistos en la calle</a></li>
                   <li><a href="tiendasasociadas.php">Tiendas asociadas</a></li>
-                  <li><a href="Fundaciones.php">fundaciones</a></li>
+                  <li><a href="Fundaciones.php">Fundaciones</a></li>
                   <li><a href="veterinarias.php">Veterinarias</a></li>
               </li>
             </ul>
@@ -91,7 +91,7 @@ error_reporting(0);
               <li><a href="Buscados1.php">Perdidos/buscados</a></li>
                   <li><a href="Vistos.php">Vistos en la calle</a></li>
                   <li><a href="tiendasasociadas.php">Tiendas asociadas</a></li>
-                  <li><a href="Fundaciones.php">fundaciones</a></li>
+                  <li><a href="Fundaciones.php">Fundaciones</a></li>
                   <li><a href="veterinarias.php">Veterinarias</a></li>
               </li>
             </ul>
