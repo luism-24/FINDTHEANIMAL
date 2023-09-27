@@ -27,11 +27,11 @@ include('Menu.php');
             <div class="form-group">
               <div class="col-md-6 cl-sm-12 mt-2" >
               <label for="exampleInputEmail1" style="float: left;">Tipo de Empresa</label>
-              <select name="IdTiempre" id="">
+              <select name="IdTiempre" id="inputState" class="form-control">
               <?php  
                     include( '../Controlador/conex.php'); 
                     # Consultamos a la tabla tipodocu, que es la que tiene los tipos de docuementos en la BD:
-                    $sql = "SELECT * FROM `Tipoempresa`";
+                    $sql = "SELECT * FROM Tipoempresa";
                     $eje = $conexion->query($sql);
                     # Mostramos a través de un ciclo todas las opciones válidas:
                     while($row = $eje->fetch_row()){
