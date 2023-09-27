@@ -6,22 +6,21 @@ include('Menu.php');
         <div class="row">
             <div class="col-md-3">
                 <div class="card">
-                    <div class="card-body">
-                        <div class="h5">@Kelly_TC</div>
-                        <div class="h7 text-muted">Kelly Tatiana Cañas</div>
-                        <div class="h7">usuario
-                        </div>
+                    <div class="card-body" class="h5">
+                        <ul class="list-group list-group-flush">
+                        <div class="h5"><span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo$_SESSION['usuario'];?></span></div>
+                        </ul>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="h6 text-muted">Seguidores</div>
-                            <div class="h5">5.2342</div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="h6 text-muted">Siguiendo</div>
-                            <div class="h5">6758</div>
-                        </li>
-                    </ul>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="h6 text-muted">Seguidores</div>
+                                <div class="h5">5.2342</div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="h6 text-muted">Siguiendo</div>
+                                <div class="h5">6758</div>
+                            </li>
+                        </ul>
                 </div>
             </div>
             <div class="col-md-6 gedf-main">
@@ -43,8 +42,8 @@ include('Menu.php');
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
                                 <div class="form-group">
-                                    <label class="sr-only" for="message">post</label>
-                                    <textarea class="form-control" id="message" rows="3" placeholder="Se te perdio tu mascota o encontrate algun peludo?"></textarea>
+                                    <label class="sr-only" for="message">Publica</label>
+                                    <textarea class="form-control" id="message" rows="3" placeholder="Se te perdió tu mascota o encontraste algún peludo?"></textarea>
                                 </div>
 
                             </div>
@@ -57,10 +56,10 @@ include('Menu.php');
                                 </div>
                                 <div class="py-4"></div>
                             </div>
-                        </div>
+                        </div> <br>
                         <div class="btn-toolbar justify-content-between">
                             <div class="btn-group">
-                                <button type="submit" class="btn btn-primary">Publicar</button>
+                                <button type="submit" class="btn btn-primary">Nueva publicación</button>
                             </div>
                             <div class="btn-group">
                                 <button id="btnGroupDrop1" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
@@ -68,9 +67,9 @@ include('Menu.php');
                                     <i class="fa fa-globe"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop1">
-                                    <a class="dropdown-item" href="#"><i class="fa fa-globe"></i> Public</a>
-                                    <a class="dropdown-item" href="#"><i class="fa fa-users"></i> Friends</a>
-                                    <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Just me</a>
+                                    <a class="dropdown-item" href="#"><i class="fa fa-globe"></i> Publico</a>
+                                    <a class="dropdown-item" href="#"><i class="fa fa-users"></i> Amigos</a>
+                                    <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Solo yo</a>
                                 </div>
                             </div>
                         </div>

@@ -33,22 +33,13 @@ session_start();
         <ul class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color:#0b5275; color:#000">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index2.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fa-solid fa-paw"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Find The Animal</sup></div>
             </a>
-
-            <!-- Divider -->
-            
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-           
-            <!-- Nav Item - Pages Collapse Menu -->
-          
-
+        <hr class="sidebar-divider">
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="usuarios.php">
@@ -72,32 +63,29 @@ session_start();
                 <i class="fa-solid fa-heart"></i>
                     <span>Publicación</span></a>
             </li>
-           
 
-
- <!-- Divider -->
- <hr class="sidebar-divider">
+        <hr class="sidebar-divider">
 
  
 
- <!-- Nav Item - Pages Collapse Menu -->
- <li class="nav-item">
-     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-         aria-expanded="true" aria-controls="collapseTwo">
-         <i class="fas fa-fw fa-cog"></i>
-         <span> Configuración</span>
-     </a>
-     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-         <div class="bg-white py-2 collapse-inner rounded">
-             <a class="collapse-item" href="Municipio.php">Municipio</a>
-             <a class="collapse-item" href="TipoDoc.php">Tipo Documento</a>
-             <a class="collapse-item" href="TipoUsua.php">Tipo Usuario</a>
-             <a class="collapse-item" href="TipoEmpre.php">Tipo Empresa</a>
-             <a class="collapse-item" href="Estado.php">Estado</a>
-             <a class="collapse-item" href="Raza.php">Raza</a>
-         </div>
-     </div>
- </li>
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span> Configuración</span>
+            </a>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="Municipio.php">Municipio</a>
+                    <a class="collapse-item" href="TipoDoc.php">Tipo Documento</a>
+                    <a class="collapse-item" href="TipoUsua.php">Tipo Usuario</a>
+                    <a class="collapse-item" href="TipoEmpre.php">Tipo Empresa</a>
+                    <a class="collapse-item" href="Estado.php">Estado</a>
+                    <a class="collapse-item" href="Raza.php">Raza</a>
+                </div>
+            </div>
+        </li>
 
 
             <!-- Divider -->
@@ -199,9 +187,9 @@ session_start();
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Selecciona "Salir" para cerrar tu sesión.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                     <a class="btn btn-primary" href="../../../Controlador/logout.php">Salir</a>
                 </div>
             </div>
