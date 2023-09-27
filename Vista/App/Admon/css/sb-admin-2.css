@@ -2282,7 +2282,7 @@ textarea.form-control {
   }
   .form-inline .input-group,
   .form-inline .custom-select {
-    width: auto;
+    width: 100px;
   }
   .form-inline .form-check {
     display: flex;

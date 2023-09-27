@@ -77,7 +77,7 @@ error_reporting(0);
 
           echo '
           <div id="logo" style="margin-top: 20px;">
-          <h1><img src="assets/img/Find_the_Animal4-removebg-preview.png" style="width: 65px; height: 60px; margin-top: 0px;"><a href="index2.php" style="margin-top: 45px;">Find The Animal</a></h1>
+          <h1><img src="assets/img/Find_the_Animal4-removebg-preview.png" style="width: 60px; height: 60px; margin-top: 0px;"><a href="index2.php" style="margin-top: 45px;">Find The Animal</a></h1>
           <p id="p1" style="margin-left: 70px;"></p>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index2.php"><img src="assets/img/logo.png" alt=""></a> -->
