@@ -10,7 +10,7 @@ include('Menu.php');
         <p class="section-description">Regístrate para que conozcan tu empresa.</p>
       </div>
        <div class="row">
-        <form> <center>
+        <form method="post" action="../Controlador/GuardarRegistrarempre.php"> <center>
           <div class="form-row">  
             <div class="form-group">
               <div class="col-md-6 cl-sm-12 mt-2" >
@@ -21,21 +21,21 @@ include('Menu.php');
             <div class="form-group">
               <div class="col-md-6 cl-sm-12 mt-2" >
               <label for="exampleInputEmail1" style="float: left;">Nombre</label>
-              <input type="text" class="form-control" name="Nombrempre" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su nombre completo">
+              <input type="text" class="form-control" name="Nombrempre" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese el nombre de la empresa">
               </div>
             </div>
             <div class="form-group">
               <div class="col-md-6 cl-sm-12 mt-2" >
               <label for="exampleInputEmail1" style="float: left;">Tipo de Empresa</label>
-              <select name="IdTiempre" id="">
+              <select name="IdTiempre" id="inputState" class="form-control">
               <?php  
                     include( '../Controlador/conex.php'); 
                     # Consultamos a la tabla tipodocu, que es la que tiene los tipos de docuementos en la BD:
-                    $sql = "SELECT * FROM `Tipoempresa`";
+                    $sql = "SELECT * FROM Tipoempresa";
                     $eje = $conexion->query($sql);
                     # Mostramos a través de un ciclo todas las opciones válidas:
                     while($row = $eje->fetch_row()){
-                    echo '<option value="'.$row[0].'">'.$row[1].'</option>';
+                    echo '<option value="'.$row[0].'">'.$row[1].''.$row[2].'</option>';
                     }
               ?>
               </select>
@@ -82,7 +82,7 @@ include('Menu.php');
             <label for="exampleInputPassword1" style="float: left;">Contraseña</label>
             <input type="password" class="form-control" name="Contraseñaempre" id="exampleInputPassword1" placeholder="Ingrese una contraseña">
             <label for="exampleInputPassword1" style="float: left;">Repita la contraseña</label>
-            <input type="password" class="form-control" name="Contraseñaempre" id="exampleInputPassword1" placeholder="Repita la contraseña">
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Repita la contraseña">
             </div>
           </div>
           <div class="form-group form-check">
@@ -91,7 +91,7 @@ include('Menu.php');
             <label class="form-check-label" for="exampleCheck1" style="margin-right: 140px;">Acepto Términos de Servicio</label>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary mt-2">Regístrate</button>
+          <button type="submit" name="BtnGuardar" class="btn btn-primary mt-2">Regístrate</button>
           <p style="margin-bottom: 5px;">¿Ya tienes cuenta? <a href="Iniciarsesion.php"data-toggle="modal" data-target="#exampleModal2">Iniciar Sesión</a></p>
           <p style="margin-bottom: 5px;">¿Quieres registrarte como usuario? <a href="registrate.php"data-toggle="modal" data-target="#exampleModal2">Regístrate como usuario</a></p>
         </form> </center>
