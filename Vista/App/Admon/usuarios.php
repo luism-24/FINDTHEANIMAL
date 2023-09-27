@@ -122,14 +122,14 @@ include('Menu.php');
                     <label for="inputState">Tipo documento</label>
                     <select id="inputState" class="form-control" name="IdTidocu">
                     <?php  
-                        include( '../../../Control/conex.php'); 
-                          # Consultamos a la tabla tipodocu, que es la que tiene los tipos de docuementos en la BD:
-                          $sql = "SELECT * FROM tipodoc";
-                          $eje = $conexion->query($sql);
-                          # Mostramos a través de un ciclo todas las opciones válidas:
-                          while($row = $eje->fetch_row()){
-                            echo '<option value="'.$row[0].'">'.$row[1].'</option>';
-                          }?>
+                      include( '../../../Controlador/conex.php'); 
+                        # Consultamos a la tabla tipodocu, que es la que tiene los tipos de docuementos en la BD:
+                        $sql = "SELECT * FROM tipodoc";
+                        $eje = $conexion->query($sql);
+                        # Mostramos a través de un ciclo todas las opciones válidas:
+                        while($row = $eje->fetch_row()){
+                        echo '<option value="'.$row[0].'">'.$row[1].'</option>';
+                    }?>
                     </select>
                   </div>
                   <div class="form-group col-md-6">

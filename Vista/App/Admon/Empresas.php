@@ -3,53 +3,53 @@ include('Menu.php');
 ?>
 
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Empresa</h1>
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                       
-                        <div class="col-md-12 align-self-end card-header py-3 justify-content-end">
-                            <button class="btn btn-sm bg-gradient-primary offset-md-10 col-md-2 " data-toggle="modal" data-target="#exampleModal">Nueva Empresa</button>
-                        </div>
-                        <div class="card-body">
-                           
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>NIT</th>
-                                            <th>Tipo Empresa</th>
-                                            <th>Dirección</th>
-                                            <th>Foto</th>
-                                            <th>Encargado</th>
-                                            <th>Teléfono</th>
-                                            <th>Eliminar</th>
-                                            <th>Modificar</th>
+            <!-- Page Heading -->
+            <h1 class="h3 mb-2 text-gray-800">Empresa</h1>
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+                
+                <div class="col-md-12 align-self-end card-header py-3 justify-content-end">
+                    <button class="btn btn-sm bg-gradient-primary offset-md-10 col-md-2 " data-toggle="modal" data-target="#exampleModal">Nueva Empresa</button>
+                </div>
+                <div class="card-body">
+                    
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>NIT</th>
+                                    <th>Tipo Empresa</th>
+                                    <th>Dirección</th>
+                                    <th>Foto</th>
+                                    <th>Encargado</th>
+                                    <th>Teléfono</th>
+                                    <th>Eliminar</th>
+                                    <th>Modificar</th>
 
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>NIT</th>
-                                            <th>Tipo Empresa</th>
-                                            <th>Dirección</th>
-                                            <th>Foto</th>
-                                            <th>Encargado</th>
-                                            <th>Teléfono</th>
-                                            <th>Eliminar</th>
-                                            <th>Modificar</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                       
-                                    <?php 
-                      include( '../../../Controlador/conex.php'); 
-                      $cons = $conexion -> query("SELECT Idempresa, Descriempresa, Direcempre, Fotoempre, Encargadoempre, Telefonoempre, Correoempre, Contraseñaempre, DescriTiempre FROM tipoempresa
-                      INNER JOIN empresa ON tipoempresa.IdTiempre = empresa.IdTiempre");
-                      while ($row = $cons -> fetch_row()) {
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>NIT</th>
+                                    <th>Tipo Empresa</th>
+                                    <th>Dirección</th>
+                                    <th>Foto</th>
+                                    <th>Encargado</th>
+                                    <th>Teléfono</th>
+                                    <th>Eliminar</th>
+                                    <th>Modificar</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                
+                            <?php 
+              include( '../../../Controlador/conex.php'); 
+              $cons = $conexion -> query("SELECT Idempresa, Descriempresa, Direcempre, Fotoempre, Encargadoempre, Telefonoempre, Correoempre, Contraseñaempre, DescriTiempre FROM tipoempresa
+              INNER JOIN empresa ON tipoempresa.IdTiempre = empresa.IdTiempre");
+              while ($row = $cons -> fetch_row()) {
            ?>
             <tr>
             <td><?php echo ''.$row[0].''; ?></td>
@@ -152,7 +152,7 @@ include('Menu.php');
                     <label for="inputCity">Tipo Empresa</label>
                     <select id="inputState" name="tipoempresa" class="form-control">
                     <?php  
-                        include( '../../../Control/conex.php'); 
+                        include( '../../../Controlador/conex.php'); 
                           # Consultamos a la tabla tipodocu, que es la que tiene los tipos de docuementos en la BD:
                           $sql = "SELECT * FROM `tipoempresa`";
                           $eje = $conexion->query($sql);

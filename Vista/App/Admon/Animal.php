@@ -137,7 +137,7 @@ include('Menu.php');
                     <label for="inputState">Estado</label>
                     <select id="inputState" class="form-control" name="Idestado">
                     <?php  
-                        include( '../../../Control/conex.php'); 
+                        include( '../../../Controlador/conex.php'); 
                           # Consultamos a la tabla tipodocu, que es la que tiene los tipos de docuementos en la BD:
                           $sql = "SELECT * FROM estado";
                           $eje = $conexion->query($sql);
@@ -151,7 +151,7 @@ include('Menu.php');
                     <label for="inputState">Municipio</label>
                     <select id="inputState" class="form-control" name="Idmunicipio">
                     <?php  
-                        include( '../../../Control/conex.php'); 
+                        include( '../../../Controlador/conex.php'); 
                           # Consultamos a la tabla tipodocu, que es la que tiene los tipos de docuementos en la BD:
                           $sql = "SELECT * FROM municipio";
                           $eje = $conexion->query($sql);
