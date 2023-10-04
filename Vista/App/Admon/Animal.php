@@ -65,8 +65,8 @@ include('Menu.php');
         
           <!-- Si el usuario presiona el botòn Modificar ira a el archivo Modificarusua, si presiona eliminar irà a Borrarusua en la Carpeta Control--> 
           <!-- Onclick nos dice a donde se va a dirigir cuando presione el botón-->    
-            <td> <center><button type="submit" class="btn btn-sm bg-gradient-primary" name="EliminaUsua" onclick="location='../../../Controlador/Borrarusuaanimal.php?id=<?php echo ''.$row[0].'' ?>'"><img src="img/Borra.png" width="20px"></button></center></td>
-            <td> <center> <button type="submit" class="btn btn-sm bg-gradient-danger"  data-toggle="modal" data-target="#exampleModal1?id<?php echo ''.$row[0].''; ?>"  ><img src="img/Modifica.png" width="20px"></button>
+          <td> <center><button type="submit" class="btn btn-sm bg-gradient-primary" name="EliminaUsua" onclick="location='../../../Controlador/Borrarusuaanimal.php?id=<?php echo ''.$row[0].'' ?>'"><i class="fa-solid fa-trash-can" style="color: #ffffff;"></i></button></center></td>
+          <td> <center> <button type="submit" class="btn btn-sm bg-gradient-danger"  onclick="location='ModiAnimal.php?id=<?php echo ''.$row[0].'' ?>'" ><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
                 
        </tr>
        <?php }   ?>

@@ -1,5 +1,6 @@
 <?php
 include('Menu.php');
+$Municipio = $_REQUEST['id'];
 ?>
 
 
@@ -7,19 +8,32 @@ include('Menu.php');
     <div class="container-fluid">
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Modificar Animal</h1>
+            <?php  
+                include( '../../../Controlador/conex.php'); 
+                    # Consultamos a la tabla tipodocu, que es la que tiene los tipos de docuementos en la BD:
+                    $sql = "SELECT * FROM municipio
+                    WHERE  Idmunicipio = $Municipio";
+                    $eje = $conexion->query($sql);
+                    # Mostramos a través de un ciclo todas las opciones válidas:
+                    while($fila = $eje->fetch_row()){
+                    
+                ?>
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
-            <form method="post" action="../../../Controlador/Guardarusuamun.php" class="mr-5 ml-5 mt-5">
+            <form method="post" action="../../../Controlador/ModiMuni.php" class="mr-5 ml-5 mt-5">
                 <div class="form-row">
-                  <div class="form-group col-md-12">
+                  <div class="form-group col-md-8">
+                    <label for="inputEmail4">Cód. Municipio</label>
+                    <input type="text" name="Idmunicipio" class="form-control" value="<?php echo ''.$fila[0].'';?>"> 
+                  </div> 
+                  <div class="form-group col-md-8">
                     <label for="inputEmail4">Nombre Municipio</label>
-                    <input type="text" name="Descrimuni" class="form-control" id="inputEmail4">
-                  </div>
-                  
-                
-                <center> <button type="submit" class="btn btn-primary" name="BtnGuardar">Guardar</button></center> 
+                    <input type="text" name="Descrimuni" class="form-control" value="<?php echo ''.$fila[1].'';?>"> <br>
+                    <center> <button type="submit" class="btn btn-primary mb-5" name="BtnGuardar">Modificar</button></center> 
+                  </div> 
               </form>
         </div>
+        <?php } ?>
     </div>
                 <!-- /.container-fluid -->
             <!-- End of Main Content -->

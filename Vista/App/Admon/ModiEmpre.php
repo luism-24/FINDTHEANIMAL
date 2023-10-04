@@ -1,44 +1,60 @@
 <?php
 include('Menu.php');
+$Empresa = $_REQUEST['id'];
 ?>
 
 
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Modificar Animal</h1>
+        <h1 class="h3 mb-2 text-gray-800">Modificar Empresa</h1>
+        <?php  
+                      include( '../../../Controlador/conex.php'); 
+                        # Consultamos a la tabla tipodocu, que es la que tiene los tipos de docuementos en la BD:
+                        $sql = "SELECT Idempresa, Descriempresa, Direcempre, Fotoempre, Encargadoempre, Telefonoempre, Correoempre, Contraseñaempre, DescriTiempre, Nombrempre FROM tipoempresa
+                        INNER JOIN empresa ON tipoempresa.IdTiempre = empresa.IdTiempre
+                        WHERE  Idempresa = $Empresa";
+                        $eje = $conexion->query($sql);
+                        # Mostramos a través de un ciclo todas las opciones válidas:
+                        while($fila = $eje->fetch_row()){
+                        
+                    ?>
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
-        <form method="post" action="../../../Controlador/Guardarusuaempre.php" class="mr-5 ml-5 mt-5">
+        <form method="post" action="../../../Controlador/ModiEmpre.php" class="mr-5 ml-5 mt-5">
                 <div class="form-row">
                   <div class="form-group col-md-12">
                   <label for="inputAddress2">NIT</label>
-                  <input type="number" name="Idempresa" class="form-control" id="inputAddress2" placeholder="">
+                  <input type="number" name="Idempresa"  readonly class="form-control" id="inputAddress2" value="<?php echo ''.$fila[0].'';?>" placeholder="">
+                  </div>
+                  <div class="form-group col-md-12">
+                  <label for="inputAddress2">Nombre</label>
+                  <input type="text" name="Nombrempre" class="form-control" id="inputAddress2" value="<?php echo ''.$fila[9].'';?>" placeholder="">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">Correo</label>
-                    <input type="email" name="Correoempre" class="form-control" id="inputEmail4">
+                    <input type="email" name="Correoempre" class="form-control" id="inputEmail4" value="<?php echo ''.$fila[6].'';?>">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputPassword4">Contraseña</label>
-                    <input type="password" name="Contraseñaempre" class="form-control" id="inputPassword4">
+                    <input type="password" name="Contraseñaempre" class="form-control" id="inputPassword4" value="<?php echo ''.$fila[7].'';?>">
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="inputAddress">Teléfono</label>
-                  <input type="number" name="Telefonoempre" class="form-control" id="inputAddress" placeholder="">
+                  <input type="number" name="Telefonoempre" class="form-control" id="inputAddress" value="<?php echo ''.$fila[5].'';?>" placeholder="">
                 </div>
                 <div class="form-group">
                   <label for="inputAddress2">Dirección</label>
-                  <input type="text" name="Direcempre" class="form-control" id="inputAddress2" placeholder="">
+                  <input type="text" name="Direcempre" class="form-control" id="inputAddress2" value="<?php echo ''.$fila[2].'';?>" placeholder="">
                 </div>
                 <div class="form-group">
                   <label for="inputAddress2">Descripción</label>
-                  <input type="text" name="Descriempresa" class="form-control" id="inputAddress2" placeholder="">
+                  <input type="text" name="Descriempresa" class="form-control" id="inputAddress2" value="<?php echo ''.$fila[1].'';?>"placeholder="">
                 </div>
                 <div class="form-group">
                   <label for="inputAddress2">Encargado</label>
-                  <input type="text" name="Encargadoempre" class="form-control" id="inputAddress2" placeholder="">
+                  <input type="text" name="Encargadoempre" class="form-control" id="inputAddress2" value="<?php echo ''.$fila[4].'';?>" placeholder="">
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
@@ -57,13 +73,13 @@ include('Menu.php');
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputZip">Foto</label>
-                    <input type="text" name="Fotoempre" class="form-control" id="inputZip">
+                    <input type="text" name="Fotoempre" class="form-control" value="<?php echo ''.$fila[3].'';?>" id="inputZip">
                   </div>
-                </div>
-                
-                <center> <button type="submit" class="btn btn-primary" name="BtnGuardar">Guardar</button></center> 
+                  <center> <button type="submit" class="btn btn-primary mb-5" name="BtnGuardar">Modificar</button></center> 
+                </div> 
               </form>
         </div>
+     <?php }?>
     </div>
                 <!-- /.container-fluid -->
             <!-- End of Main Content -->

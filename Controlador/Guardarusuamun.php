@@ -6,7 +6,7 @@ include ('conex.php');
    	 /* Creamos  unas nuevas variables con el signo $, donde almacenaremos lo que trae en los formularios en name ="idusuario", por ejemplo */
 	$Idmunicipio = $_POST['Idmunicipio'];
 	$Descrimuni = $_POST['Descrimuni'];
-echo $Tipousua .'<br>';
+
 	 /* Creamos la sentencia para insertar datos en la tabla  usuario, las primeras variables corresponden a las que aparecen en la estructura de la BD y despues de Values corresponde a las que creamos anteriormente */
 	$ins= "INSERT INTO  municipio ( Idmunicipio, Descrimuni ) VALUES (' ', '$Descrimuni')";
 	

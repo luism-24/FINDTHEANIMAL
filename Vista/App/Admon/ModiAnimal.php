@@ -1,5 +1,6 @@
 <?php
 include('Menu.php');
+$Animal = $_REQUEST['id'];
 ?>
 
 
@@ -7,11 +8,28 @@ include('Menu.php');
     <div class="container-fluid">
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Modificar Animal</h1>
+          <?php  
+            include( '../../../Controlador/conex.php'); 
+              # Consultamos a la tabla tipodocu, que es la que tiene los tipos de docuementos en la BD:
+              $sql = "SELECT Idanimal, Nombreanimal, Fotoanimal, Descrianimal, Descriraza, Descriestado, Descrimuni FROM raza 
+              INNER JOIN animal ON raza.Idraza = animal.Idraza
+              INNER JOIN estado ON estado.Idestado = animal.Idestado
+              INNER JOIN municipio ON municipio.Idmunicipio = animal.Idmunicipio
+              WHERE  Idanimal = $Animal";
+              $eje = $conexion->query($sql);
+              # Mostramos a través de un ciclo todas las opciones válidas:
+              while($fila = $eje->fetch_row()){
+              
+          ?>
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
-        <form method="post" action="../../../Controlador/Guardarusuaanimal.php" class="mr-5 ml-5 mt-5">
+        <form method="post" action="../../../Controlador/ModiAnimal.php" class="mr-5 ml-5 mt-5">
             <div class="form-row">
-            <div class="form-group col-md-6">
+              <div class="form-group col-md-6">
+                    <label for="inputCity">Cód. Animal</label>
+                    <input type="text" name="Idanimal" readonly class="form-control" value="<?php echo ''.$fila[0].'';?>">
+                  </div>
+              <div class="form-group col-md-6">
                     <label for="inputState">Raza</label>
                     <select id="inputState" class="form-control" name="Idraza">
                     <?php  
@@ -56,23 +74,23 @@ include('Menu.php');
              
                   <div class="form-group col-md-6">
                     <label for="inputCity">Nombre</label>
-                    <input type="text" name="Nombreanimal" class="form-control" id="inputCity">
+                    <input type="text" name="Nombreanimal" class="form-control" value="<?php echo ''.$fila[1].'';?>">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputCity">Foto</label>
-                    <input type="text" name="Fotoanimal" class="form-control" id="inputCity">
+                    <input type="text" name="Fotoanimal" class="form-control" value="<?php echo ''.$fila[2].'';?>">
                   </div>
                 <div class="form-group  col-md-6">
                   <label for="inputAddress">Descripción</label>
-                  <input type="text" name="Descrianimal" class="form-control" id="inputAddress" placeholder="Descripción del animal">
+                  <input type="text" name="Descrianimal" class="form-control" value="<?php echo ''.$fila[3].'';?>" placeholder="Descripción del animal">
                 </div>
-                  
-                  
-                </div>
-                
-                <center> <button type="submit" class="btn btn-primary" name="BtnGuardar">Guardar</button></center> 
+                  <div class="col-md-6">
+                  <center> <button type="submit" class="btn btn-primary mb-5" name="BtnGuardar">Modificar</button></center> 
+                  </div>
+                </div> 
               </form>
         </div>
+      <?php } ?>
     </div>
                 <!-- /.container-fluid -->
             <!-- End of Main Content -->

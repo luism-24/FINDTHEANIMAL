@@ -21,11 +21,15 @@ include('Menu.php');
                             <thead>
                                 <tr>
                                     <th>NIT</th>
-                                    <th>Tipo Empresa</th>
+                                    <th>Descripción</th>
                                     <th>Dirección</th>
                                     <th>Foto</th>
                                     <th>Encargado</th>
                                     <th>Teléfono</th>
+                                    <th>Correo</th>
+                                    <th>Contraseña</th>
+                                    <th>Tipo Empresa</th>
+                                    <th>Nombre</th>
                                     <th>Eliminar</th>
                                     <th>Modificar</th>
 
@@ -34,11 +38,15 @@ include('Menu.php');
                             <tfoot>
                                 <tr>
                                     <th>NIT</th>
-                                    <th>Tipo Empresa</th>
+                                    <th>Descripción</th>
                                     <th>Dirección</th>
                                     <th>Foto</th>
                                     <th>Encargado</th>
                                     <th>Teléfono</th>
+                                    <th>Correo</th>
+                                    <th>Contraseña</th>
+                                    <th>Tipo Empresa</th>
+                                    <th>Nombre</th>
                                     <th>Eliminar</th>
                                     <th>Modificar</th>
                                 </tr>
@@ -47,7 +55,7 @@ include('Menu.php');
                                 
                             <?php 
               include( '../../../Controlador/conex.php'); 
-              $cons = $conexion -> query("SELECT Idempresa, Descriempresa, Direcempre, Fotoempre, Encargadoempre, Telefonoempre, Correoempre, Contraseñaempre, DescriTiempre FROM tipoempresa
+              $cons = $conexion -> query("SELECT Idempresa, Descriempresa, Direcempre, Fotoempre, Encargadoempre, Telefonoempre, Correoempre, Contraseñaempre, DescriTiempre, Nombrempre FROM tipoempresa
               INNER JOIN empresa ON tipoempresa.IdTiempre = empresa.IdTiempre");
               while ($row = $cons -> fetch_row()) {
            ?>
@@ -58,11 +66,16 @@ include('Menu.php');
             <td><img src="img/<?php echo ''.$row[3].''; ?>" width="60px" heigt="60px"></td>
             <td><?php echo ''.$row[4].''; ?></td>
             <td><?php echo ''.$row[5].''; ?></td>
+            <td><?php echo ''.$row[6].''; ?></td>
+            <td><?php echo ''.$row[7].''; ?></td>           
+            <td><?php echo ''.$row[8].''; ?></td>
+            <td><?php echo ''.$row[9].''; ?></td>
+
         
           <!-- Si el usuario presiona el botòn Modificar ira a el archivo Modificarusua, si presiona eliminar irà a Borrarusua en la Carpeta Control--> 
           <!-- Onclick nos dice a donde se va a dirigir cuando presione el botón-->    
-            <td> <center><button type="submit" class="btn btn-sm bg-gradient-primary" name="EliminaUsua" onclick="location='../../../Controlador/Borrarusuaempre.php?id=<?php echo ''.$row[0].'' ?>'"><i class="fa-solid fa-trash-can" style="color: #ffffff;"></i></button></center></td>
-            <td> <center> <button type="submit" class="btn btn-sm bg-gradient-danger"  data-toggle="modal" data-target="#exampleModal1?id<?php echo ''.$row[0].''; ?>"  ><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
+          <td> <center><button type="submit" class="btn btn-sm bg-gradient-primary" name="EliminaUsua" onclick="location='../../../Controlador/Borrarusuaempre.php?id=<?php echo ''.$row[0].'' ?>'"><i class="fa-solid fa-trash-can" style="color: #ffffff;"></i></button></center></td>
+          <td> <center> <button type="submit" class="btn btn-sm bg-gradient-danger"  onclick="location='ModiEmpre.php?id=<?php echo ''.$row[0].'' ?>'" ><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i></button>
                       
        </tr>
        <?php }   ?>
@@ -120,8 +133,12 @@ include('Menu.php');
                 <div class="form-row">
                   <div class="form-group col-md-12">
                   <label for="inputAddress2">NIT</label>
-                  <input type="number" name="Idempresa" class="form-control" id="inputAddress2" placeholder="">
+                  <input type="number" name="Nombrempre" class="form-control" id="inputAddress2" placeholder="">
                   </div>
+                  <div class="form-group">
+                  <label for="inputAddress2">Nombre empresa</label>
+                  <input type="text" name="Encargadoempre" class="form-control" id="inputAddress2" placeholder="">
+                </div>
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">Correo</label>
                     <input type="email" name="Correoempre" class="form-control" id="inputEmail4">

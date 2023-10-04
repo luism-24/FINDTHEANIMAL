@@ -1,5 +1,6 @@
 <?php
 include('Menu.php');
+$Usuario = $_REQUEST['id'];
 ?>
 
 
@@ -7,13 +8,24 @@ include('Menu.php');
     <div class="container-fluid">
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Modificar Usuario</h1>
-        <!-- DataTales Example -->
+        <?php  
+                      include( '../../../Controlador/conex.php'); 
+                        # Consultamos a la tabla tipodocu, que es la que tiene los tipos de docuementos en la BD:
+                        $sql = "SELECT Idusuario, Nombrecomple, Correousua, Contrausua, Telefonousua, Descriusua, Descridocu FROM tipousuario
+                        INNER JOIN usuario ON  tipousuario.IdTiusua =  usuario.IdTiusua
+                        INNER JOIN  tipodoc  ON  tipodoc.IdTidocu = usuario.IdTidocu
+                        WHERE  Idusuario = $Usuario";
+                        $eje = $conexion->query($sql);
+                        # Mostramos a través de un ciclo todas las opciones válidas:
+                        while($fila = $eje->fetch_row()){
+                        
+                    ?>
         <div class="card shadow mb-4">
-        <form method="post" action="../../../Controlador/Guardarusua.php" class="mr-5 ml-5 mt-5">
+        <form method="post" action="../../../Controlador/ModiUsua.php" class="mr-5 ml-5 mt-5">
             <div class="form-row">
             <div class="form-group col-md-6">
                     <label for="inputState">Tipo documento</label>
-                    <select id="inputState" class="form-control" name="IdTidocu">
+                    <select id="inputState" class="form-control" name="IdTidocu" >
                     <?php  
                       include( '../../../Controlador/conex.php'); 
                         # Consultamos a la tabla tipodocu, que es la que tiene los tipos de docuementos en la BD:
@@ -27,48 +39,48 @@ include('Menu.php');
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputEmail4" >Identificación</label>
-                    <input type="number" name="IdUsuario" class="form-control" id="inputEmail4">
+                    <input type="number" readonly name="IdUsuario" class="form-control" value="<?php echo ''.$fila[0].'';?>">
                   </div>
                   <div class="form-group col-md-12">
                     <label for="inputState">Tipo usuario</label>
                     <select id="inputState" class="form-control" name="IdTiusua">
+                    
                     <?php  
                         include( '../../../Control/conex.php'); 
                           # Consultamos a la tabla tipodocu, que es la que tiene los tipos de docuementos en la BD:
                           $sql = "SELECT * FROM tipousuario";
                           $eje = $conexion->query($sql);
                           # Mostramos a través de un ciclo todas las opciones válidas:
-                          while($row = $eje->fetch_row()){
-                            echo '<option value="'.$row[0].'">'.$row[1].'</option>';
+                          while($row1 = $eje->fetch_row()){
+                            echo '<option value="'.$row1[0].'">'.$row1[1].'</option>';
                           }?>
                     </select>
                   </div>
              
                   <div class="form-group col-md-6">
                     <label for="inputCity">Nombre</label>
-                    <input type="text" name="Nombrecomple" class="form-control" id="inputCity">
+                    <input type="text" name="Nombrecomple" class="form-control" value="<?php echo ''.$fila[1].'';?>">
                   </div>
                 <div class="form-group  col-md-6">
                   <label for="inputAddress2">Teléfono</label>
-                  <input type="number" name="Telefonousua" class="form-control" id="inputPhone" placeholder="Teléfono">
+                  <input type="number" name="Telefonousua" class="form-control" value="<?php echo ''.$fila[4].'';?>" placeholder="Teléfono">
                 </div>
                
                   
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">Correo</label>
-                    <input type="email" name="Correousua" class="form-control" id="inputEmail4">
+                    <input type="email" name="Correousua" class="form-control" value="<?php echo ''.$fila[2].'';?>">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputPassword4">Contraseña</label>
-                    <input type="password" name="Contrausua" class="form-control" id="inputPassword4">
+                    <input type="password" name="Contrausua" class="form-control" value="<?php echo ''.$fila[3].'';?>">
                   </div>
                 </div>
-                  
-                  
-                </div>
-                
-              <center> <button type="submit" class="btn btn-primary" name="BtnGuardar">Guardar</button></center> 
-              </form>
+                <center> <button type="submit" class="btn btn-primary mb-5" name="BtnGuardar">Modificar</button></center> 
+            </div>
+          </form>
+
+       <?php }?>
         </div>
     </div>
                 <!-- /.container-fluid -->
