@@ -17,6 +17,7 @@ error_reporting(0);
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
+  <script src="https://kit.fontawesome.com/f0eb0569ec.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -63,7 +64,7 @@ error_reporting(0);
               <li><a href="Buscados1.php">Perdidos/buscados</a></li>
                   <li><a href="Vistos.php">Vistos en la calle</a></li>
                   <li><a href="tiendasasociadas.php">Tiendas asociadas</a></li>
-                  <li><a href="Fundaciones.php">Fundaciones</a></li>
+                  <li><a href="Fundaciones.php">fundaciones</a></li>
                   <li><a href="veterinarias.php">Veterinarias</a></li>
               </li>
             </ul>
@@ -77,7 +78,7 @@ error_reporting(0);
 
           echo '
           <div id="logo" style="margin-top: 20px;">
-          <h1><img src="assets/img/Find_the_Animal4-removebg-preview.png" style="width: 60px; height: 60px; margin-top: 0px;"><a href="index2.php" style="margin-top: 45px;">Find The Animal</a></h1>
+          <h1><img src="assets/img/Find_the_Animal4-removebg-preview.png" style="width: 65px; height: 60px; margin-top: 0px;"><a href="index2.php" style="margin-top: 45px;">Find The Animal</a></h1>
           <p id="p1" style="margin-left: 70px;"></p>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index2.php"><img src="assets/img/logo.png" alt=""></a> -->
@@ -91,7 +92,7 @@ error_reporting(0);
               <li><a href="Buscados1.php">Perdidos/buscados</a></li>
                   <li><a href="Vistos.php">Vistos en la calle</a></li>
                   <li><a href="tiendasasociadas.php">Tiendas asociadas</a></li>
-                  <li><a href="Fundaciones.php">Fundaciones</a></li>
+                  <li><a href="Fundaciones.php">fundaciones</a></li>
                   <li><a href="veterinarias.php">Veterinarias</a></li>
               </li>
             </ul>

@@ -8,19 +8,9 @@ include('Menu.php');
                 <div class="card">
                     <div class="card-body" class="h5">
                         <ul class="list-group list-group-flush">
-                        <div class="h5"><span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo$_SESSION['usuario'];?></span></div>
+                        <div class="h5"><span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo$_SESSION['usuario'];?></span> <img src="App/Admon/img/verificar.png" style="width: 5%; height: 5%;"></div>
                         </ul>
                     </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <div class="h6 text-muted">Seguidores</div>
-                                <div class="h5">5.2342</div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="h6 text-muted">Siguiendo</div>
-                                <div class="h5">6758</div>
-                            </li>
-                        </ul>
                 </div>
             </div>
             <div class="col-md-6 gedf-main">
@@ -82,16 +72,7 @@ include('Menu.php');
                     <div class="card-header">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="mr-2">
-                                    <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
-                                </div>
-                                <div class="ml-2">
-                                    <div class="h5 m-0">@Nikolle_hoyos</div>
-                                    <div class="h7 text-muted">Medellín</div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="dropdown">
+                                
                                     <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fa fa-ellipsis-h"></i>
                                     </button>
@@ -106,164 +87,51 @@ include('Menu.php');
                         </div>
 
                     </div>
-                    <div class="card-body">
-                    <center><img src="app/Admon/img/Husky.png" class="img-thumbnail" alt="..."></center>
-                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>Hace una hora</div>
-                        <a class="card-link" href="#">
-                            <h5 class="card-title">Lorem ipsum dolor sit amet, consectetur adip.</h5>
-                        </a>
 
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium esse magnam nemo dolor
-                            sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste voluptates.
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>
-                        <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
-                        <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
-                    </div>
-                </div>
-                <!-- Post /////-->
+                
+     <?php 
+        #Conectamos a la Base de datos
+            include( '../Controlador/conex.php'); 
+            #Creamos una variable, $Consulta, que va a contener el Script Select(Consulta a la base de datos)
+            
+            $Consulta="SELECT Idanimal, Nombreanimal, Fotoanimal, Descrianimal, Descriraza, Descriestado, Descrimuni FROM raza 
+                INNER JOIN animal ON raza.Idraza = animal.Idraza
+                INNER JOIN estado ON estado.Idestado = animal.Idestado
+                INNER JOIN municipio ON municipio.Idmunicipio = animal.Idmunicipio";
+                #Creamos una variable, $Tour que es envia la conexión y ejecuta la consulta $Consulta
+            $Tour=$conexion->query($Consulta);
+                #Creamos un ciclo que permite que los datos de la consulta sean insertados en un vector 
+                #llamado $row, que se ejecuta mientras se encuentres datos dentro de la tabla que estamos 
+                #consultando
 
+            while ($row=$Tour->fetch_row()){
+     ?>
+<div class="container">
+<div class="card" style="width: 100%; margin-top: 25px">
+             <!-- En la etiqueta de imágenes creamos la ruta donde vamos a insertar las imágenes y consultamos 
+             el nombre  de la imagen, en este caso esta en la posición 5; recordemos  que la carpeta que estamos
+            llamando debe contener el nombre y extensión de la imagen que estamos consultando,
+            en este caso, las imágenes deben estar en la carpeta assets/img (Vista)-->                 
+            <img src="App/Admon/img/<?php echo ''.$row[2].''; ?>" class="card-img-top" alt="...">
+            <div class="card-body">
+                 <!-- En la posición 1 está el nombre del sitio -->  
+                <h5 class="card-title" style="color: #3b626f;"><?php echo ''.$row[1].''; ?></h5> <i class="fa-solid fa-heart"></i> <i class="fa-solid fa-bookmark" style="margin-left: 10px;"></i><i class="fa-solid fa-paper-plane" style="margin-left: 10px;"></i>
+                 <!-- Consultamos los demás datos desde la base de datos -->  
+                <p class="card-text card-text1">
+                <b>Nombre: </b><?php echo ''.$row[1].''; ?><br>
+                <b>Descripción: </b><?php echo ''.$row[3].''; ?><br>
+                <b>Raza: </b><?php echo ''.$row[4].''; ?><br>
+                <b>Estado: </b><?php echo ''.$row[5].''; ?><br>
+                
 
-                <!--- \\\\\\\Post-->
-                <div class="card gedf-card">
-                    <div class="card-header">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="mr-2">
-                                    <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
-                                </div>
-                                <div class="ml-2">
-                                    <div class="h5 m-0">@LeeCross</div>
-                                    <div class="h7 text-muted">Miracles Lee Cross</div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="dropdown">
-                                    <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fa fa-ellipsis-h"></i>
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
-                                        <div class="h6 dropdown-header">Configuration</div>
-                                        <a class="dropdown-item" href="#">Save</a>
-                                        <a class="dropdown-item" href="#">Hide</a>
-                                        <a class="dropdown-item" href="#">Report</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="card-body">
-                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> 10 min ago</div>
-                        <a class="card-link" href="#">
-                            <h5 class="card-title"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit consectetur
-                                deserunt illo esse distinctio.</h5>
-                        </a>
-
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam omnis nihil, aliquam est, voluptates officiis iure soluta
-                            alias vel odit, placeat reiciendis ut libero! Quas aliquid natus cumque quae repellendus. Lorem
-                            ipsum dolor sit amet consectetur adipisicing elit. Ipsa, excepturi. Doloremque, reprehenderit!
-                            Quos in maiores, soluta doloremque molestiae reiciendis libero expedita assumenda fuga quae.
-                            Consectetur id molestias itaque facere? Hic!
-                        </p>
-                        <div>
-                            <span class="badge badge-primary">JavaScript</span>
-                            <span class="badge badge-primary">Android</span>
-                            <span class="badge badge-primary">PHP</span>
-                            <span class="badge badge-primary">Node.js</span>
-                            <span class="badge badge-primary">Ruby</span>
-                            <span class="badge badge-primary">Paython</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>
-                        <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
-                        <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
-                    </div>
-                </div>
-                <!-- Post /////-->
-
-
-                <!--- \\\\\\\Post-->
-                <div class="card gedf-card">
-                    <div class="card-header">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="mr-2">
-                                    <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
-                                </div>
-                                <div class="ml-2">
-                                    <div class="h5 m-0">@LeeCross</div>
-                                    <div class="h7 text-muted">Miracles Lee Cross</div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="dropdown">
-                                    <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fa fa-ellipsis-h"></i>
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
-                                        <div class="h6 dropdown-header">Configuration</div>
-                                        <a class="dropdown-item" href="#">Save</a>
-                                        <a class="dropdown-item" href="#">Hide</a>
-                                        <a class="dropdown-item" href="#">Report</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="card-body">
-                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> Hace 40 min</div>
-                        <a class="card-link" href="#">
-                            <h5 class="card-title">Totam non adipisci hic! Possimus ducimus amet, dolores illo ipsum quos
-                                cum.</h5>
-                        </a>
-
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sunt fugit reprehenderit consectetur exercitationem odio,
-                            quam nobis? Officiis, similique, harum voluptate, facilis voluptas pariatur dolorum tempora sapiente
-                            eius maxime quaerat.
-                            <a href="https://mega.nz/#!1J01nRIb!lMZ4B_DR2UWi9SRQK5TTzU1PmQpDtbZkMZjAIbv97hU" target="_blank">https://mega.nz/#!1J01nRIb!lMZ4B_DR2UWi9SRQK5TTzU1PmQpDtbZkMZjAIbv97hU</a>
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>
-                        <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
-                        <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
-                    </div>
-                </div>
-                <!-- Post /////-->
-
-
-
+                </p>
             </div>
-            <div class="col-md-3">
-                <div class="card gedf-card">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
-                    </div>
-                </div>
-                <div class="card gedf-card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                card's content.</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </div>
+            
             </div>
+            
+         </div>    
+         <?php } ?>
+         </div>
         </div>
     </div>
 
