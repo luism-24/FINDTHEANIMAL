@@ -86,7 +86,6 @@ error_reporting(0);
            <nav id="navbar" class="navbar">
            <ul>
           <li><a class="nav-link scrollto active" href="index2.php#hero">Inicio</a></li>
-          <li><a class="nav-link scrollto" href="index2.php#features">Servicios</a></li>
           <li class="dropdown"><a href="#"><span>Peluditos</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="Buscados1.php">Perdidos/buscados</a></li>
@@ -97,9 +96,7 @@ error_reporting(0);
               </li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="index2.php#gallery">Galería</a></li>
           <li><a class="nav-link scrollto" href="index2.php#contact">Contacto</a></li>
-          <li><a class="nav-link scrollto" href="index2.php#about">Nosotros</a></li>
           <li class="dropdown"><a href="#"><span>Perfil</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="../Controlador/logout.php">Cerrar Sesión</a></li>
