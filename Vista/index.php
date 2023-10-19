@@ -42,32 +42,31 @@ error_reporting(0);
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center header-transparent">
-    <div class="container d-flex justify-content-between align-items-center">
-
+    <div style="margin-left: 50px" class="container-fluid d-flex justify-content-between align-items-center">
       <div id="logo" style="margin-top: 13px;">
-        <h1><img src="assets/img/Find_the_Animal4-removebg-preview.png" style="width: 60px; height: 60px; margin-top: 20px;"><a href="index.php" style="margin-top: 40%;">Find The Animal</a></h1>
-        <p id="p1" style="margin-left: 60px;"></p>
+        <h1><img src="assets/img/Find_the_Animal4-removebg-preview.png" style="width: 50px; height: 50px; margin-top: 20px;"><a href="index.php" style="margin-top: 50%;">Find The Animal</a></h1>
+        <p id="p1" style="margin-left: 90px;"></p>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt=""></a> -->
       </div>
 
-      <nav id="navbar" class="navbar">
+      <nav id="navbar" style="margin-right: 50px" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="index.php#hero">Inicio</a></li>
           <li><a class="nav-link scrollto" href="index.php#features">Servicios</a></li>
-    
-        
-       
           <li class="dropdown"><a href="#"><span>Peluditos</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              
               <li><a href="Buscados1.php">Perdidos/buscados</a></li>
                   <li><a href="Vistos.php">Vistos en la calle</a></li>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Aliados</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
                   <li><a href="tiendasasociadas.php">Tiendas asociadas</a></li>
-                  <li><a href="fundaciones.php">Fundaciones</a></li>
+                  <li><a href="Fundaciones.php">Fundaciones</a></li>
                   <li><a href="veterinarias.php">Veterinarias</a></li>
               </li>
-             
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="index.php#gallery">Galería</a></li>
