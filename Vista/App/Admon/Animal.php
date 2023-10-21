@@ -119,11 +119,11 @@ include('Menu.php');
         <div class="modal-body">
             <form method="post" action="../../../Controlador/Guardarusuaanimal.php">
             <div class="form-row">
-            <div class="form-group col-md-6">
+                <div class="form-group col-md-6">
                     <label for="inputState">Raza</label>
                     <select id="inputState" class="form-control" name="Idraza">
                     <?php  
-                        include( '../../../Control/conex.php'); 
+                        include( '../../../Controlador/conex.php'); 
                           # Consultamos a la tabla tipodocu, que es la que tiene los tipos de docuementos en la BD:
                           $sql = "SELECT * FROM raza";
                           $eje = $conexion->query($sql);

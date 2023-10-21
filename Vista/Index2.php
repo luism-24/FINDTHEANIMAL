@@ -23,44 +23,24 @@ include('Menu.php');
                                 <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">Haz una publicación
                                  </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="images-tab" data-toggle="tab" role="tab" aria-controls="images" aria-selected="false" href="#images">Imagenes</a>
-                            </li>
                         </ul>
                     </div>
                     <div class="card-body">
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
-                                <div class="form-group">
-                                    <label class="sr-only" for="message">Publica</label>
-                                    <textarea class="form-control" id="message" rows="3" placeholder="Se te perdió tu mascota o encontraste algún peludo?"></textarea>
-                                </div>
 
-                            </div>
-                            <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
-                                <div class="form-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="customFile">
-                                        <label class="custom-file-label" for="customFile">Upload image</label>
-                                    </div>
-                                </div>
-                                <div class="py-4"></div>
-                            </div>
-                        </div> <br>
                         <div class="btn-toolbar justify-content-between">
+                            <form method="POST" action="Publicar.php">
                             <div class="btn-group">
                                 <button type="submit" class="btn btn-primary">Nueva publicación</button>
                             </div>
+                            </form>
                             <div class="btn-group">
-                                <button id="btnGroupDrop1" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop">
                                     <i class="fa fa-globe"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop1">
-                                    <a class="dropdown-item" href="#"><i class="fa fa-globe"></i> Publico</a>
-                                    <a class="dropdown-item" href="#"><i class="fa fa-users"></i> Amigos</a>
-                                    <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Solo yo</a>
-                                </div>
+                                        <li><a class="dropdown-item" href="#"><i class="fa fa-globe"></i> Público</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="fa fa-users"></i> Amigos</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="fa fa-user"></i> Solo yo</a></li>
+                                    </div>
                             </div>
                         </div>
                     </div>

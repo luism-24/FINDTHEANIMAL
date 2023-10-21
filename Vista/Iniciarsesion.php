@@ -1,8 +1,6 @@
 <?php
 include('Menu.php');
 ?>
-  <!-- ======= Hero Section ======= -->
- ->
 
   <main id="main" style="margin-top: 120px;">
 
