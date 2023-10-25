@@ -106,7 +106,6 @@ error_reporting(0);
               </li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="index2.php#contact">Contacto</a></li>
           <li class="dropdown"><a href="#"><span>Perfil</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="../Controlador/logout.php">Cerrar Sesión</a></li>

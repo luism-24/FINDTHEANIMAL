@@ -2,12 +2,10 @@
 include('Menu.php');
 $Municipio = $_REQUEST['id'];
 ?>
-
-
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Modificar Animal</h1>
+        <h1 class="h3 mb-2 text-gray-800">Modificar Municipio</h1>
             <?php  
                 include( '../../../Controlador/conex.php'); 
                     # Consultamos a la tabla tipodocu, que es la que tiene los tipos de docuementos en la BD:
@@ -16,7 +14,6 @@ $Municipio = $_REQUEST['id'];
                     $eje = $conexion->query($sql);
                     # Mostramos a través de un ciclo todas las opciones válidas:
                     while($fila = $eje->fetch_row()){
-                    
                 ?>
         <!-- DataTales Example -->
         <div class="card shadow mb-4">

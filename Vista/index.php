@@ -153,27 +153,7 @@ error_reporting(0);
 
 
     <!-- ======= Advanced Featuress Section ======= -->
-    <section id="advanced-features">
 
-      <div class="features-row section-bg" data-aos="fade-up">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <img class="advanced-feature-img-right wow fadeInRight" src="assets/img/advanced-feature-1.jpg" alt="">
-              <div>
-                <h2>Extensión de google maps para que sea más fácil encontrar a tu amigo</h2>
-                <h3>Esta extensión es para que te sea más fácil ubicar a tu mascota de una manera más exacta y puedas llegar mucho más sencilla a tu destino.</h3>
-                <h4>¿Cómo funciona?</h4>
-                <p>Cuando veas una publicación, bajo la foto aparecerá la dirección que puso el usuario que hizo la publicación, 
-                  le darás click a la dirección y automaticamente te llevara a Google Maps, donde estará la dirección que el usuario ingresó; luego podrás poner tu 
-                  ubicación actual y así llegarás fácilmente a donde se encontraron a la mascota que viste en la publicación.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- ======= Frequently Asked Questions Section ======= -->
     <section id="faq">
