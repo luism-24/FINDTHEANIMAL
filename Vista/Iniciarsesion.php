@@ -33,7 +33,7 @@ include('Menu.php');
                     </div>
                     <p style="margin-bottom: 5px;">¿No tienes cuenta? <a href="registrate.php"data-toggle="modal" data-target="#exampleModal2">Regístrate</a></p>
                     <p style="margin-bottom: 5px;">¿No tienes cuenta como empresa? <a href="registrateempre.php"data-toggle="modal" data-target="#exampleModal2">Regístrate como empresa</a></p>
-                    <button type="submit" name="login" class="btn btn-primary mt-2" style="margin: top 5px ;">Iniciar Sesión</button>
+                    <button type="submit" name="login" class="btn btn-primary mt-2" style="margin: top 5px ; margin-bottom: 180px;">Iniciar Sesión</button>
                   </form> 
                 </div>
 

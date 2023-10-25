@@ -6,7 +6,7 @@ include('Menu.php');
   <div class="row mt-5">
 
   <div class="section-header" style="margin-top: 25px">
-          <h3 class="section-title">Perdidos/Buscados</h3>
+          <h3 class="section-title">Vistos</h3>
           <span class="section-divider"></span>
         </div>
       <!-- Después de crear la fila hacemos la consulta a la tabla que deseamos mostrar datos-->
