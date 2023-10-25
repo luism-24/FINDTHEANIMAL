@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-09-2023 a las 20:37:52
+-- Tiempo de generación: 25-10-2023 a las 04:42:19
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -46,7 +46,16 @@ INSERT INTO `animal` (`Idanimal`, `Nombreanimal`, `Fotoanimal`, `Descrianimal`, 
 (2, 'Bigote', 'gato2.png', 'Gato en adopción, su nombre es Bigotes y tiene 2 años de edad, es muy cariñoso y fiel. cualquier información al 3234579698', 2, 4, 2),
 (3, 'Max', 'cockerspaniel.png', 'Tiene más o menos un año, y lo vi por prado centro, por el callejón de muebles y antigüedades, cualquier información ir por la zona', 5, 2, 3),
 (4, 'Danna', 'Husky.png', 'Esta es mi mascota Danna, se me voló yendo por Copacabana, por favor cualquier información hacérmela saber, es una perrita muy miedosa y nerviosa', 4, 1, 7),
-(5, 'Naya', 'Pastorovejero.png', 'Ella es Naya, se perdió por los lados del centro comercial puerta del norte, cualquier información que tengan de ella, por favor hacérmelo saber, soy su dueña y estoy muy angustiada', 3, 1, 4);
+(5, 'Naya', 'Pastorovejero.png', 'Ella es Naya, se perdió por los lados del centro comercial puerta del norte, cualquier información que tengan de ella, por favor hacérmelo saber, soy su dueña y estoy muy angustiada', 3, 1, 4),
+(7, 'Zeus', 'Pitbullfoto.jpg', 'Su nombre es Zeus, esta perdido ya que tiene placa pero no hay números de teléfono, lo encontré por los lados de Pompilio del norte. Si saben algo del paradero de sus dueños o alguien lo quiere adoptar, cualquier información escribirme', 1, 2, 7),
+(8, 'Snoopie', 'Golden.jpg', 'Buenas tardes se me perdió el perrito por la estrella en horas de la mañana su nombre es Snoopie si lo han visto por favor llamar a estos números, muchas gracias', 55, 1, 2),
+(9, 'Paco', 'Chihuahua.jpg', 'El es Paco, es un perrito chihuahua que no tiene mucho tiempo de nacido, no puedo tenerlo ya que me voy del país y no se cuando vuelva. Por favor alguien que le de un buen hogar, gracias', 61, 4, 8),
+(10, 'Dolce', 'Terrier.jpg', 'Esta perrita esta perdida en la Parroquial de Divino Maestro o si esta abandonada alguien que la quiera adoptar, por favor ayuden a compartir.', 57, 4, 3),
+(11, 'No tiene', 'Caniche.jpg', 'Este es uno de 6 cachorros que tuvo mi perrita, lo estoy dando en adopción ya que no puedo cuidarlo. Cualquier información, escribir al 3207634598', 56, 4, 6),
+(12, 'Leoncito', 'cockerspaniel2.png', 'El es Leoncito, mi perrito, tiene 10 meses y es muy juguetón y amigable, se me perdió el día 7 de Junio por los lados de la estación de Niquia y hasta el momento no he sabido nada de el. Por favor si tienen cualquier información, hacérmela saber, el es muy importante para mi', 5, 1, 4),
+(13, 'Perla', 'Oriental.jpeg', 'Ella es Perla, una gata oriental que tengo hace dos años, pero pronto me voy del país y no podre llevármela es una gata muy cariñosa y para nada dañina. Personas interesadas por favor darle un buen hogar', 80, 4, 8),
+(14, 'No tiene', 'Vanturco.jpeg', 'Este es Un gato que me encontré cerca del parque de la estrella, es muy lindo, lo bañe y lo lleve al veterinario y esta libre de parásitos y sano. Cualquier información, escribirme ', 83, 2, 2),
+(15, 'Michi', 'Persa.jpeg', 'El es Michi, lo perdí y me informaron que la ultima vez que fue visto en la calle fue por el centro comercial Mayorca. Por favor, cualquier información hacérmela saber, es un gatito muy tímido y asustadizo ya que es muy mayor', 71, 1, 9);
 
 -- --------------------------------------------------------
 
@@ -170,7 +179,83 @@ INSERT INTO `raza` (`Idraza`, `Descriraza`) VALUES
 (3, 'Pastor ovejero'),
 (4, 'Husky'),
 (5, 'Cocker spaniel'),
-(8, 'Pastor Aleman');
+(8, 'Pastor Aleman'),
+(9, 'Pitweiler'),
+(10, 'Kai Ken'),
+(11, 'Sabueso Polaco|'),
+(12, 'Sabueso Español'),
+(13, 'Pastor Bohemio (chodsky)'),
+(14, 'Labradoodle'),
+(15, 'Sabueso Fino Colombiano'),
+(16, 'Sabueso de Transilvania'),
+(17, 'Morkie'),
+(18, 'Sabueso de Baviera'),
+(19, 'Lucher'),
+(20, 'Esquimal Canadiense'),
+(21, 'Jack Russell Terrier'),
+(22, 'Bulldog Francés'),
+(23, 'Bulldog Continental'),
+(24, 'Alaskan Klee Kai'),
+(25, 'Esquimal Americano'),
+(26, 'Pastor Alemán'),
+(27, 'Volpino Italiano'),
+(28, 'Pomerania'),
+(29, 'Terrier Alemán'),
+(30, 'Chihuahua'),
+(31, 'Perdiguero Frisón'),
+(32, 'Shih tzu'),
+(33, 'Perdiguero de Burgos'),
+(34, 'Perdiguero portugués'),
+(35, 'Cobrador'),
+(36, 'Cobrador pelo liso'),
+(37, 'Silky Terrier Australiano'),
+(38, 'Leonberger'),
+(39, 'Braco de Weimar'),
+(40, 'Braco de Borbón'),
+(41, 'Beagle'),
+(42, 'Border Collie'),
+(43, 'Pastor Belga '),
+(44, 'Pastor Inglés'),
+(45, 'Fox terrier'),
+(46, 'Whippet'),
+(47, 'Braco Alemán '),
+(48, 'Pinscher'),
+(49, 'Bichón Maltés'),
+(50, 'Manchester terrier'),
+(51, 'Terrier Tibetano'),
+(52, 'Lancashier'),
+(53, 'Lobero Irlandés '),
+(54, 'Perro Australiano'),
+(55, 'Golden Retriver'),
+(56, 'Caniche'),
+(57, 'Yorkshire terrier'),
+(58, 'Dálmata'),
+(59, 'Criollo'),
+(60, 'Boxer'),
+(61, 'Chihuahua '),
+(62, 'Bulldog Inglés '),
+(63, 'Doberman'),
+(64, 'San Bernardo'),
+(65, 'Rottweilwer'),
+(66, 'Labrador'),
+(67, 'Jack Rusell Terrier'),
+(68, 'Schnauzer'),
+(70, 'Maine Coon'),
+(71, 'gato Persa'),
+(72, 'gato Siamés'),
+(73, 'gato Bengalí'),
+(74, 'gato Exótico'),
+(75, 'gato Bosque de Noruega'),
+(76, 'Gato Siberiano'),
+(77, 'Gato Azul Ruso'),
+(78, 'gato Ragdoll'),
+(79, 'Británico de pelo corto'),
+(80, 'gato Oriental'),
+(81, 'Sagrado de Birmania'),
+(82, 'Angora Turco'),
+(83, 'Van Turco'),
+(84, 'gato Himalayo'),
+(85, 'gato Nebelung');
 
 -- --------------------------------------------------------
 
@@ -339,7 +424,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `animal`
 --
 ALTER TABLE `animal`
-  MODIFY `Idanimal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Idanimal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `estado`
@@ -363,7 +448,7 @@ ALTER TABLE `publicacion`
 -- AUTO_INCREMENT de la tabla `raza`
 --
 ALTER TABLE `raza`
-  MODIFY `Idraza` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `Idraza` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT de la tabla `tipodoc`
