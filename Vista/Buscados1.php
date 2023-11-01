@@ -43,7 +43,6 @@ include('Menu.php');
                  <!-- Consultamos los demás datos desde la base de datos -->  
                 <p class="card-text card-text1">
                 <b>Nombre: </b><?php echo ''.$row[1].''; ?><br>
-                <b>Descripción: </b><?php echo ''.$row[3].''; ?><br>
                 <b>Raza: </b><?php echo ''.$row[4].''; ?><br>
                 <b>Estado: </b><?php echo ''.$row[5].''; ?><br>
                 

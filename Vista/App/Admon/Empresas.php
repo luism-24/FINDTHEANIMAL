@@ -133,11 +133,11 @@ include('Menu.php');
                 <div class="form-row">
                   <div class="form-group col-md-12">
                   <label for="inputAddress2">NIT</label>
-                  <input type="number" name="Nombrempre" class="form-control" id="inputAddress2" placeholder="">
+                  <input type="number" name="Idempresa" class="form-control" id="inputAddress2" placeholder="">
                   </div>
                   <div class="form-group">
                   <label for="inputAddress2">Nombre empresa</label>
-                  <input type="text" name="Encargadoempre" class="form-control" id="inputAddress2" placeholder="">
+                  <input type="text" name="Nombrempre" class="form-control" id="inputAddress2" placeholder="">
                 </div>
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">Correo</label>
@@ -181,7 +181,7 @@ include('Menu.php');
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputZip">Foto</label>
-                    <input type="text" name="Fotoempre" class="form-control" id="inputZip">
+                    <input type="file" name="Fotoempre" class="form-control" id="inputZip">
                   </div>
                 </div>
                 

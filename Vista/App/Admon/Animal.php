@@ -34,7 +34,7 @@ include('Menu.php');
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                        <th>Cód. Animal</th>
+                                            <th>Cód. Animal</th>
                                             <th>Nombre</th>
                                             <th>Foto</th>
                                             <th>Descripción</th>

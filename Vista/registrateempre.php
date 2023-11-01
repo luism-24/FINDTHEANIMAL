@@ -15,7 +15,7 @@ include('Menu.php');
             <div class="form-group">
               <div class="col-md-6 cl-sm-12 mt-2" >
               <label for="exampleInputEmail1" style="float: left;">NIT</label>
-              <input type="number" class="form-control" name="Idempresa" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su el NIT de su empresa">
+              <input type="number" class="form-control" name="Idempresa" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese el NIT de su empresa">
               </div>
             </div>
             <div class="form-group">

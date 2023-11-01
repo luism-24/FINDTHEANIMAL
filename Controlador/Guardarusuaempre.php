@@ -13,7 +13,7 @@ include ('conex.php');
 	$Correoempre = $_POST['Correoempre'];
 	$Contraseñaempre = $_POST['Contraseñaempre'];
 	$IdTiempre = $_POST['tipoempresa'];
-	$Nombrempre = $_POST['Nombrempre']
+	$Nombrempre = $_POST['Nombrempre'];
 
 	 /* Creamos la sentencia para insertar datos en la tabla  usuario, las primeras variables corresponden a las que aparecen en la estructura de la BD y despues de Values corresponde a las que creamos anteriormente */
 	$ins= "INSERT INTO empresa (Idempresa ,Descriempresa, Direcempre, Fotoempre, Encargadoempre, Telefonoempre,  Correoempre, Contraseñaempre, IdTiempre, Nombrempre)

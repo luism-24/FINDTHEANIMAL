@@ -21,7 +21,7 @@ $Municipio = $_REQUEST['id'];
                 <div class="form-row">
                   <div class="form-group col-md-8">
                     <label for="inputEmail4">Cód. Municipio</label>
-                    <input type="text" name="Idmunicipio" class="form-control" value="<?php echo ''.$fila[0].'';?>"> 
+                    <input type="text" name="Idmunicipio" readonly class="form-control" value="<?php echo ''.$fila[0].'';?>"> 
                   </div> 
                   <div class="form-group col-md-8">
                     <label for="inputEmail4">Nombre Municipio</label>
